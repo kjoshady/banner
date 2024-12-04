@@ -27,7 +27,7 @@
     }
 
     /* Close button styling */
-    #signupBanner button {
+    #signupBanner button.closeBtn {
       position: absolute;
       top: 5px;
       right: 5px;
@@ -54,7 +54,7 @@
     }
 
     /* Input field styling */
-    #signupBanner input, #signupBanner button {
+    #signupBanner input, #signupBanner button.submitBtn {
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
@@ -62,11 +62,12 @@
     }
 
     /* Submit button styling */
-    #signupBanner button {
+    #signupBanner button.submitBtn {
       background-color: #0073e6;
       color: white;
       border: none;
       cursor: pointer;
+      margin-top: 10px;
     }
 
     /* Adjust for responsive design */
@@ -86,20 +87,23 @@
   <!-- Signup Banner -->
   <div id="signupBanner">
     <!-- Close Button -->
-    <button onclick="document.getElementById('signupBanner').style.display='none';">&times;</button>
+    <button class="closeBtn" onclick="document.getElementById('signupBanner').style.display='none';">&times;</button>
 
     <!-- Banner Content -->
     <h4>Stay in the Know with Vincenzo's!</h4>
     <p>Sign up for updates, exclusive offers, and service alerts.</p>
     
-    <!-- Constant Contact Form Embed (Replace with actual form action link) -->
-    <form action="https://your-constant-contact-form-link.com" method="POST">
-      <input type="email" name="email" placeholder="Enter your email" required>
-      <br><br>
-      <label><input type="checkbox" name="list_1" value="Exclusive Offers & Promotions"> Exclusive Offers & Promotions</label><br>
-      <label><input type="checkbox" name="list_2" value="Service Alerts & Reminders"> Service Alerts & Reminders</label><br>
-      <button type="submit">I'm In!</button>
-    </form>
+    <!-- Constant Contact Embed (This handles the form action and fields) -->
+    <div id="signupFormContainer">
+      <!-- Constant Contact Form will be injected here by the script -->
+    </div>
+
+    <!-- Constant Contact Active Forms Script -->
+    <script>
+      var _ctct_m = "122dce37249e7b59c4d5775addb0ad34";
+    </script>
+    <script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+
   </div>
 
   <!-- Slide-In Script -->
