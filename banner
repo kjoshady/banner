@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Banner</title>
+  <style>
+    /* Styles for the banner */
+    #signupBanner {
+      position: fixed;
+      bottom: -200px;
+      left: 0;
+      width: 100%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: bottom 0.5s ease;
+    }
+    #signupBanner button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+    #signupBanner h4 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    #signupBanner p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    #signupBanner form input, #signupBanner form button {
+      padding: 10px;
+      margin: 5px;
+      font-size: 14px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="signupBanner">
+    <button onclick="document.getElementById('signupBanner').style.display='none';">&times;</button>
+    <h4>Stay in the Know with Vincenzo's!</h4>
+    <p>Sign up for updates, exclusive offers, and service alerts.</p>
+    <!-- Constant Contact Form Embed -->
+    <form action="https://your-constant-contact-form-link.com" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <br>
+      <label><input type="checkbox" name="list_1" value="Exclusive Offers & Promotions"> Exclusive Offers & Promotions</label><br>
+      <label><input type="checkbox" name="list_2" value="Service Alerts & Reminders"> Service Alerts & Reminders</label><br>
+      <button type="submit">I'm In!</button>
+    </form>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        document.getElementById("signupBanner").style.bottom = "0"; // Move into view from the bottom
+      }, 3000); // Delay before showing the banner
+    });
+  </script>
+</body>
+</html>
