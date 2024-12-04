@@ -3,20 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Signup Form</title>
+  <title>Signup Banner</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #signupBanner {
+      position: fixed;
+      bottom: -200px; /* Start off-screen */
+      left: 0;
+      width: 100%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: bottom 0.5s ease;
+    }
+
+    #signupBanner button {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #333;
+    }
+
+    #signupBanner h4 {
+      margin: 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    #signupBanner form {
+      display: inline-block;
+      text-align: left;
+      margin-top: 10px;
+    }
+
+    #signupBanner input, #signupBanner button {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    #signupBanner button {
+      background-color: #0073e6;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+  </style>
 </head>
 <body>
 
-  <!-- Signup Form -->
-  <h4>Stay in the Know with Vincenzo's!</h4>
-  <p>Sign up for updates, exclusive offers, and service alerts.</p>
-  <form action="https://your-constant-contact-form-link.com" method="POST">
-    <input type="email" name="email" placeholder="Enter your email" required>
-    <br>
-    <label><input type="checkbox" name="list_1" value="Exclusive Offers & Promotions"> Exclusive Offers & Promotions</label><br>
-    <label><input type="checkbox" name="list_2" value="Service Alerts & Reminders"> Service Alerts & Reminders</label><br>
-    <button type="submit">I'm In!</button>
-  </form>
+  <!-- Signup Banner -->
+  <div id="signupBanner">
+    <button onclick="document.getElementById('signupBanner').style.display='none';">&times;</button>
+
+    <h4>Stay in the Know with Vincenzo's!</h4>
+    <p>Sign up for updates, exclusive offers, and service alerts.</p>
+    
+    <!-- Form Content -->
+    <form action="https://your-constant-contact-form-link.com" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <br>
+      <label><input type="checkbox" name="list_1" value="Exclusive Offers & Promotions"> Exclusive Offers & Promotions</label><br>
+      <label><input type="checkbox" name="list_2" value="Service Alerts & Reminders"> Service Alerts & Reminders</label><br>
+      <button type="submit">I'm In!</button>
+    </form>
+  </div>
+
+  <!-- Slide-In Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        document.getElementById("signupBanner").style.bottom = "0"; // Show banner after 3 seconds
+      }, 3000);
+    });
+  </script>
 
 </body>
 </html>
