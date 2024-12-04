@@ -10,6 +10,7 @@
       font-family: Arial, sans-serif;
     }
 
+    /* Style for the banner */
     #signupBanner {
       position: fixed;
       bottom: -200px; /* Start off-screen */
@@ -25,6 +26,7 @@
       transition: bottom 0.5s ease;
     }
 
+    /* Close button styling */
     #signupBanner button {
       position: absolute;
       top: 5px;
@@ -37,18 +39,21 @@
       color: #333;
     }
 
+    /* Title of the banner */
     #signupBanner h4 {
       margin: 0;
       font-size: 20px;
       font-weight: bold;
     }
 
+    /* Form container style */
     #signupBanner form {
       display: inline-block;
       text-align: left;
       margin-top: 10px;
     }
 
+    /* Input field styling */
     #signupBanner input, #signupBanner button {
       padding: 10px;
       border-radius: 5px;
@@ -56,6 +61,7 @@
       font-size: 14px;
     }
 
+    /* Submit button styling */
     #signupBanner button {
       background-color: #0073e6;
       color: white;
@@ -63,21 +69,33 @@
       cursor: pointer;
     }
 
+    /* Adjust for responsive design */
+    @media (max-width: 600px) {
+      #signupBanner {
+        padding: 15px;
+      }
+
+      #signupBanner input {
+        width: 80%;
+      }
+    }
   </style>
 </head>
 <body>
 
   <!-- Signup Banner -->
   <div id="signupBanner">
+    <!-- Close Button -->
     <button onclick="document.getElementById('signupBanner').style.display='none';">&times;</button>
 
+    <!-- Banner Content -->
     <h4>Stay in the Know with Vincenzo's!</h4>
     <p>Sign up for updates, exclusive offers, and service alerts.</p>
     
-    <!-- Form Content -->
+    <!-- Constant Contact Form Embed (Replace with actual form action link) -->
     <form action="https://your-constant-contact-form-link.com" method="POST">
       <input type="email" name="email" placeholder="Enter your email" required>
-      <br>
+      <br><br>
       <label><input type="checkbox" name="list_1" value="Exclusive Offers & Promotions"> Exclusive Offers & Promotions</label><br>
       <label><input type="checkbox" name="list_2" value="Service Alerts & Reminders"> Service Alerts & Reminders</label><br>
       <button type="submit">I'm In!</button>
@@ -88,7 +106,7 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
-        document.getElementById("signupBanner").style.bottom = "0"; // Show banner after 3 seconds
+        document.getElementById("signupBanner").style.bottom = "0"; // Banner slides into view after 3 seconds
       }, 3000);
     });
   </script>
